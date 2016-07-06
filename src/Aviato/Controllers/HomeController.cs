@@ -7,11 +7,19 @@ using Microsoft.AspNetCore.Mvc;
 using Aviato.Models.Twitter;
 using Aviato.Models.Twitter.Calls;
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
 namespace Aviato.Controllers
 {
     public class HomeController : Controller
     {
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult TwitterFeed()
         {
             TwitterContext context = new TwitterContext();
 
@@ -21,9 +29,13 @@ namespace Aviato.Controllers
             call.Language = "en";
             call.Query = "twitter";
 
-            string test = await context.Call(call);
+            var test = context.Call(call).Result;
 
-            return View();
+            var statuses = JObject.Parse(test).SelectToken("statuses").ToString();
+
+            List<Tweet> tweets = JsonConvert.DeserializeObject<List<Tweet>>(statuses);
+
+            return PartialView(tweets);
         }
 
         public IActionResult About()

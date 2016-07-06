@@ -14,5 +14,8 @@ namespace Aviato.Models.Twitter
 
         [JsonProperty("favorite_count")]
         public int FavoriteCount { get; set; }
+
+        [JsonProperty("text")]
+        public string Text { get; set; }
     }
 }

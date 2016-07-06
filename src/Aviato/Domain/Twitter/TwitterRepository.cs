@@ -9,7 +9,7 @@ namespace Aviato.Domain.Twitter
 {
     public class TwitterRepository
     {
-        string apiKey = "OY43NcJr0PVylHxo6LG2aigqP";
-        string apiSecret = "ZVYCKJOkWTyAUsKM3pCBTLyvIGduzkntlN9L7XtVgPC9VrefIN";
+        //string apiKey = "OY43NcJr0PVylHxo6LG2aigqP";
+        //string apiSecret = "ZVYCKJOkWTyAUsKM3pCBTLyvIGduzkntlN9L7XtVgPC9VrefIN";
     }
 }

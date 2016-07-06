@@ -1,0 +1,13 @@
+﻿@using Aviato.Models.Twitter
+@model IEnumerable<Tweet>
+
+<div class="row">
+    @foreach (var tweet in Model)
+    {
+    <div class="row">
+        <p>
+            @tweet.Text
+        </p>
+    </div>
+    }
+</div>
