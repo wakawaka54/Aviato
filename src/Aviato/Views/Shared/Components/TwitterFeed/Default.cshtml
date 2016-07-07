@@ -1,0 +1,18 @@
+﻿@using Aviato.Models.Twitter
+@model IEnumerable<Tweet>
+
+<div class="row twitter-feed">
+    @foreach (var tweet in Model)
+    {
+        <div class="row">
+            <div class="col-md-5">
+                <p class="small">
+                    @tweet.Text
+                </p>
+                <p class="small">
+                    @tweet.CreatedAt_DateTime.ToString("hh:mm tt - dd MMM yyyy")
+                </p>
+            </div>
+        </div>
+    }
+</div>

@@ -29,3 +29,22 @@ textarea {
     display: none
   }
 }
+
+/*Font sizes*/
+.small {
+    font-size:12px;
+}
+
+.medium {
+    font-size:18px;
+}
+
+.large {
+    font-size:24px;
+}
+
+.twitter-feed {
+    height:500px;
+    margin-left:20px;
+    background-color:yellow;
+}

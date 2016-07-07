@@ -19,25 +19,6 @@ namespace Aviato.Controllers
             return View();
         }
 
-        public IActionResult TwitterFeed()
-        {
-            TwitterContext context = new TwitterContext();
-
-            SearchTweetsCall call = new SearchTweetsCall();
-            call.Count = 4;
-            call.ResultType = "recent";
-            call.Language = "en";
-            call.Query = "twitter";
-
-            var test = context.Call(call).Result;
-
-            var statuses = JObject.Parse(test).SelectToken("statuses").ToString();
-
-            List<Tweet> tweets = JsonConvert.DeserializeObject<List<Tweet>>(statuses);
-
-            return PartialView(tweets);
-        }
-
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
